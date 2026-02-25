@@ -16,7 +16,8 @@ const pool = mysql.createPool({
 });
 
 export async function query(sql: string, params?: any[]) {
-  const [results] = await pool.execute(sql, params);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [results] = await pool.execute(sql, params || []);
   return results;
 }
 
