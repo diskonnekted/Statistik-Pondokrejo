@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Statistik Penduduk</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://www.pondokrejo.sleman-desa.id/assets/css/report.css" rel="stylesheet">
+        </head>
+
+<body>
+    <div id="container">
+        <div id="body"> <table>
+    <tbody>
+        <tr>
+            <td align="center">
+                                <h1 class="judul">
+                    PEMERINTAH KABUPATEN SLEMAN <BR>KAPANEWON TEMPEL <BR>KALURAHAN PONDOKREJO
+                </h1>
+                <h1 style="text-align: center;">LAPORAN DATA STATISTIK KEPENDUDUKAN MENURUT JUMLAH DAN PERSENTASE PENDUDUK MENURUT KELOMPOK RENTANG UMUR DI KALURAHAN PONDOKREJO, 2026</h1>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 5px 20px;">
+                <br>
+                <table>
+                    <tbody>
+                                                                                            </tbody>
+                </table>
+                <br>
+                <table class="border thick data">
+                    <thead>
+                        <tr class="thick">
+                            <th class="thick">No</th>
+                            <th class="thick" width="50%"></th>
+                            <th class="thick" width="16%">Jumlah</th>
+                            <th class="thick" width="16%">Laki-laki</th>
+                            <th class="thick" width="16%">Perempuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">1</td>
+                                <td class="thick">0 S/D 1 TAHUN</td>
+                                <td class="thick" align="right">14</td>
+                                <td class="thick" align="right">5</td>
+                                <td class="thick" align="right">9</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">2</td>
+                                <td class="thick">16 S/D 17 TAHUN</td>
+                                <td class="thick" align="right">193</td>
+                                <td class="thick" align="right">106</td>
+                                <td class="thick" align="right">87</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">3</td>
+                                <td class="thick">18 S/D 27 TAHUN</td>
+                                <td class="thick" align="right">1033</td>
+                                <td class="thick" align="right">507</td>
+                                <td class="thick" align="right">524</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">4</td>
+                                <td class="thick">59 S/D 69 TAHUN</td>
+                                <td class="thick" align="right">754</td>
+                                <td class="thick" align="right">353</td>
+                                <td class="thick" align="right">401</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2"></td>
+                                <td class="thick">JUMLAH</td>
+                                <td class="thick" align="right">1994</td>
+                                <td class="thick" align="right">971</td>
+                                <td class="thick" align="right">1021</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2"></td>
+                                <td class="thick">BELUM MENGISI</td>
+                                <td class="thick" align="right">4329</td>
+                                <td class="thick" align="right">2152</td>
+                                <td class="thick" align="right">2165</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2"></td>
+                                <td class="thick">TOTAL</td>
+                                <td class="thick" align="right">6323</td>
+                                <td class="thick" align="right">3123</td>
+                                <td class="thick" align="right">3186</td>
+                            </tr>
+                                            </tbody>
+                </table>
+                <br>
+                <table class="noborder">
+                    <tbody>
+                        <tr>
+                            <td class="top" colspan="5">
+                                <div class="nowrap">
+                                    <label>Laporan data statistik kependudukan menurut  pada tanggal</label>
+                                    <label>:</label>
+                                    <strong>24 Februari 2026</strong>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+ </div>
+                    <br />
+            <table width="10%" style="text-align: center; ">
+                <tr>
+                    <td colspan="2" width=5%>&nbsp;</td>
+                                            <td colspan="2" width=40%>
+                            MENGETAHUI
+                            <br>LURAH PONDOKREJO
+                            <br><br><br><br>
+                            <br><u>R  WIDAYATMA  SE</u>
+                            <br>NIPD/NIP : 
+                        </td>
+                                        <td colspan="9"  width=10% >&nbsp;</td>
+                    <td width=40% nowrap>
+                        PONDOKREJO, 24 FEBRUARI 2026
+                        <br>CARIK PONDOKREJO
+                        <br><br><br><br>
+                        <br><u>BUDI NURMILASARI</u>
+                        <br>NIPD/NIP : 
+                    </td>
+                    <td width=5%>&nbsp;</td>
+                </tr>
+            </table>
+            </div>
+</body>
+
+</html>

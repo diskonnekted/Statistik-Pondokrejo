@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard Statistik Desa Pondokrejo
+
+This project is a statistical dashboard website for Kalurahan Pondokrejo, Sleman, Yogyakarta, built with Next.js 14+, TypeScript, Tailwind CSS, Leaflet, and ApexCharts.
+
+## Tech Stack
+
+- **Framework:** Next.js 14+ (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Maps:** Leaflet.js via `react-leaflet`
+- **Charts:** ApexCharts via `react-apexcharts`
+- **Data Fetching:** TanStack Query (React Query)
+- **Icons:** Lucide React
+
+## Project Structure
+
+```
+src/
+├── app/                  # Next.js App Router pages
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Dashboard page
+├── components/
+│   ├── charts/           # Chart components (ApexCharts)
+│   ├── dashboard/        # Dashboard specific views
+│   ├── layout/           # Layout components (Sidebar, Navbar)
+│   ├── map/              # Map components (Leaflet)
+│   └── ui/               # Reusable UI components
+├── hooks/                # Custom React hooks (React Query)
+├── lib/                  # Utility functions and mock data
+├── services/             # API service layer (mock API)
+└── types/                # TypeScript type definitions
+```
 
 ## Getting Started
 
-First, run the development server:
+1.  **Install dependencies:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    ```bash
+    npm install
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.  **Run the development server:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    ```bash
+    npm run dev
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Interactive Map:** Choropleth map displaying population density per hamlet (Dusun).
+- **Statistical Charts:** Visualizations for demographics, economy, and public facilities.
+- **Responsive Layout:** Mobile-friendly sidebar and navigation.
+- **Mock API:** Simulated data fetching with loading states.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Map Data:** Update `src/lib/mock-geojson.ts` with real GeoJSON data.
+- **API:** Replace `src/services/api.ts` with real API calls.

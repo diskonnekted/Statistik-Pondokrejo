@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Statistik Penduduk</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://www.pondokrejo.sleman-desa.id/assets/css/report.css" rel="stylesheet">
+        </head>
+
+<body>
+    <div id="container">
+        <div id="body"> <table>
+    <tbody>
+        <tr>
+            <td align="center">
+                                <h1 class="judul">
+                    PEMERINTAH KABUPATEN SLEMAN <BR>KAPANEWON TEMPEL <BR>KALURAHAN PONDOKREJO
+                </h1>
+                <h1 style="text-align: center;">LAPORAN DATA STATISTIK KEPENDUDUKAN MENURUT JUMLAH DAN PERSENTASE PENDUDUK BERDASARKAN PENDIDIKAN DALAM KK YANG DICATAT DALAM KARTU KELUARGA  DI KALURAHAN PONDOKREJO, 2026</h1>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 5px 20px;">
+                <br>
+                <table>
+                    <tbody>
+                                                                                            </tbody>
+                </table>
+                <br>
+                <table class="border thick data">
+                    <thead>
+                        <tr class="thick">
+                            <th class="thick">No</th>
+                            <th class="thick" width="50%"></th>
+                            <th class="thick" width="16%">Jumlah</th>
+                            <th class="thick" width="16%">Laki-laki</th>
+                            <th class="thick" width="16%">Perempuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">1</td>
+                                <td class="thick">TIDAK/BELUM SEKOLAH</td>
+                                <td class="thick" align="right">1374</td>
+                                <td class="thick" align="right">642</td>
+                                <td class="thick" align="right">731</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">2</td>
+                                <td class="thick">BELUM TAMAT SD/SEDERAJAT</td>
+                                <td class="thick" align="right">622</td>
+                                <td class="thick" align="right">304</td>
+                                <td class="thick" align="right">317</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">3</td>
+                                <td class="thick">TAMAT SD/SEDERAJAT</td>
+                                <td class="thick" align="right">839</td>
+                                <td class="thick" align="right">381</td>
+                                <td class="thick" align="right">457</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">4</td>
+                                <td class="thick">SLTP/SEDERAJAT</td>
+                                <td class="thick" align="right">1114</td>
+                                <td class="thick" align="right">548</td>
+                                <td class="thick" align="right">563</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">5</td>
+                                <td class="thick">SLTA/SEDERAJAT</td>
+                                <td class="thick" align="right">1940</td>
+                                <td class="thick" align="right">1062</td>
+                                <td class="thick" align="right">875</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">6</td>
+                                <td class="thick">DIPLOMA I/II</td>
+                                <td class="thick" align="right">43</td>
+                                <td class="thick" align="right">14</td>
+                                <td class="thick" align="right">29</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">7</td>
+                                <td class="thick">AKADEMI/DIPLOMA III/S. MUDA</td>
+                                <td class="thick" align="right">127</td>
+                                <td class="thick" align="right">52</td>
+                                <td class="thick" align="right">74</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">8</td>
+                                <td class="thick">DIPLOMA IV/STRATA I</td>
+                                <td class="thick" align="right">240</td>
+                                <td class="thick" align="right">107</td>
+                                <td class="thick" align="right">132</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">9</td>
+                                <td class="thick">STRATA II</td>
+                                <td class="thick" align="right">19</td>
+                                <td class="thick" align="right">11</td>
+                                <td class="thick" align="right">8</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2">10</td>
+                                <td class="thick">STRATA III</td>
+                                <td class="thick" align="right">1</td>
+                                <td class="thick" align="right">1</td>
+                                <td class="thick" align="right">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2"></td>
+                                <td class="thick">JUMLAH</td>
+                                <td class="thick" align="right">6319</td>
+                                <td class="thick" align="right">3122</td>
+                                <td class="thick" align="right">3186</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2"></td>
+                                <td class="thick">BELUM MENGISI</td>
+                                <td class="thick" align="right">4</td>
+                                <td class="thick" align="right">1</td>
+                                <td class="thick" align="right">0</td>
+                            </tr>
+                                                                                <tr>
+                                <td class="thick" align="center" width="2"></td>
+                                <td class="thick">TOTAL</td>
+                                <td class="thick" align="right">6323</td>
+                                <td class="thick" align="right">3123</td>
+                                <td class="thick" align="right">3186</td>
+                            </tr>
+                                            </tbody>
+                </table>
+                <br>
+                <table class="noborder">
+                    <tbody>
+                        <tr>
+                            <td class="top" colspan="5">
+                                <div class="nowrap">
+                                    <label>Laporan data statistik kependudukan menurut  pada tanggal</label>
+                                    <label>:</label>
+                                    <strong>24 Februari 2026</strong>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+ </div>
+                    <br />
+            <table width="10%" style="text-align: center; ">
+                <tr>
+                    <td colspan="2" width=5%>&nbsp;</td>
+                                            <td colspan="2" width=40%>
+                            MENGETAHUI
+                            <br>LURAH PONDOKREJO
+                            <br><br><br><br>
+                            <br><u>R  WIDAYATMA  SE</u>
+                            <br>NIPD/NIP : 
+                        </td>
+                                        <td colspan="9"  width=10% >&nbsp;</td>
+                    <td width=40% nowrap>
+                        PONDOKREJO, 24 FEBRUARI 2026
+                        <br>CARIK PONDOKREJO
+                        <br><br><br><br>
+                        <br><u>BUDI NURMILASARI</u>
+                        <br>NIPD/NIP : 
+                    </td>
+                    <td width=5%>&nbsp;</td>
+                </tr>
+            </table>
+            </div>
+</body>
+
+</html>

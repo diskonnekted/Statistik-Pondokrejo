@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Temporary and Log files
+*.txt
+*.log
+*.xml
+*.html
+~$*
+*.sql
+
+# Large files (Upload manually)
+public/jalan.geojson
+public/landuse.geojson
