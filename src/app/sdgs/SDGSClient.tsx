@@ -187,7 +187,8 @@ export default function SDGSClient({ data: sdgsItems, averageScore, success, mes
                      <Image 
                         src={SDG_ICONS[18]} 
                         alt="SDGs Logo" 
-                        fill
+                        width={80}
+                        height={80}
                         className="object-contain"
                         unoptimized
                      />

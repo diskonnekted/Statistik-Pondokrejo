@@ -336,7 +336,7 @@ export default async function AnalisisPage() {
                                     </div>
                                 </div>
                                 <div className="mt-4 p-3 bg-slate-50 border border-slate-200 rounded-lg w-full flex justify-between items-center">
-                                    <span className="text-sm font-medium text-slate-600">Skor IDM {idmScore > 0 ? idmYear : ""} {idmStatus ? `(${idmStatus})` : ''}</span>
+                                    <span className="text-sm font-medium text-slate-600">Skor IDM {idmYear} {idmStatus ? `(${idmStatus})` : ''}</span>
                                     <span className="text-xl font-bold text-slate-900">{idmScore.toFixed(4)}</span>
                                 </div>
                             </div>

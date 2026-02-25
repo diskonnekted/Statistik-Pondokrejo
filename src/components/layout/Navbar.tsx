@@ -25,7 +25,8 @@ export function Navbar({ toggleSidebar }: NavbarProps) {
           <Image 
             src="/veda-logo.png" 
             alt="VEDA - Visual Econonomic Data Analytics" 
-            fill
+            width={256}
+            height={48}
             className="object-contain object-left"
             priority
           />

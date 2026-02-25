@@ -72,7 +72,13 @@ export function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
           {!isCollapsed && (
             <div className="flex items-center gap-3">
               <div className="relative w-12 h-12 shrink-0">
-                <Image src="/logo.png" alt="Logo Pondokrejo" fill className="object-contain" />
+                <Image 
+                  src="/logo.png" 
+                  alt="Logo Pondokrejo" 
+                  width={48} 
+                  height={48} 
+                  className="object-contain" 
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-slate-900 leading-none">
@@ -86,7 +92,13 @@ export function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
           )}
           {isCollapsed && (
             <div className="relative w-10 h-10 mx-auto">
-                <Image src="/logo.png" alt="Logo" fill className="object-contain" />
+                <Image 
+                  src="/logo.png" 
+                  alt="Logo" 
+                  width={40} 
+                  height={40} 
+                  className="object-contain" 
+                />
             </div>
           )}
           <button
