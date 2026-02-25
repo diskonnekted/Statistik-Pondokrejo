@@ -127,7 +127,7 @@ export default async function AnalisisPage() {
         min: 0, 
         tickAmount: 5,
         labels: {
-            formatter: (val: number) => val.toFixed(2)
+            // formatter removed to avoid serialization error
         }
     },
     fill: { 
@@ -148,7 +148,7 @@ export default async function AnalisisPage() {
     },
     tooltip: {
         y: {
-            formatter: (val: number) => val.toFixed(4)
+            // formatter removed to avoid serialization error
         }
     }
   };
