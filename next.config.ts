@@ -2,7 +2,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // output: "standalone", // Disabled standalone mode
   /* config options here */
   images: {
     remotePatterns: [
