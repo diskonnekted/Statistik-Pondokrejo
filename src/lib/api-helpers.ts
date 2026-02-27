@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { opensidApi, sdgsApi } from "./api-service";
 import { IDM_2024_DATA } from "./idm-data-static";
+import { getSdgsDataFromDb } from "./sdgs-service";
 
 /**
  * Common query parameter extraction
@@ -95,14 +96,63 @@ export async function fetchSDGSData(
     districtCode = "3404140", 
     villageCode = "3404140004"
 ) {
+    // 1. Try fetching from local database first (Migration Strategy)
+    try {
+        const dbData = await getSdgsDataFromDb();
+        if (dbData) {
+            return {
+                success: true,
+                data: dbData,
+                message: "Data loaded from local database",
+                status: 200
+            };
+        }
+    } catch (dbError) {
+        console.warn("Failed to fetch SDGS from DB, falling back to API:", dbError);
+    }
+
+    // 2. Fallback to external API if DB is empty or fails
     // URL format: /sdgs/searching/score-sdgs?province_code=62&city_code=6201&district_code=6201050&village_code=6201050016
-    // Note: We must also include location_code (which is the same as villageCode) to avoid 500 Internal Server Error
-    return sdgsApi.get(`/sdgs/searching/score-sdgs?province_code=${provinceCode}&city_code=${cityCode}&district_code=${districtCode}&village_code=${villageCode}&location_code=${villageCode}`, {
-        cache: {
-            revalidate: 60 * 60 * 24 * 30, // 30 days
-            tags: ["sdgs-data"],
-        },
-    });
+    
+    // Fallback data structure in case API also fails
+    const fallbackData = {
+        average: "0.00",
+        total_desa: 1,
+        data: Array.from({ length: 18 }, (_, i) => ({
+            goals: i + 1,
+            title: `Goal ${i + 1}`,
+            score: "0.00"
+        }))
+    };
+
+    try {
+        const response = await sdgsApi.get(`/sdgs/searching/score-sdgs?province_code=${provinceCode}&city_code=${cityCode}&district_code=${districtCode}&village_code=${villageCode}&location_code=${villageCode}`, {
+            cache: {
+                revalidate: 60 * 60 * 24 * 30, // 30 days
+                tags: ["sdgs-data"],
+            },
+            // Reduce timeout to fail faster if blocked
+            timeout: 5000 
+        });
+
+        if (response.success) {
+            return response;
+        }
+        
+        console.warn("SDGS API returned unsuccess, using fallback");
+        return {
+            success: true,
+            data: fallbackData,
+            message: "Data loaded from fallback (API unavailable)"
+        };
+    } catch (error) {
+        console.warn("SDGS API fetch error, using fallback:", error);
+        return {
+            success: true,
+            data: fallbackData,
+            message: "Data loaded from fallback (API unavailable)"
+        };
+    }
 }
 
 /**
