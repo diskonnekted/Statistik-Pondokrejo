@@ -97,31 +97,9 @@ export default function MapInner({ showControls = false }: { showControls?: bool
               const res = await fetch(MERAPI_RADIUS_URL);
               const data = await res.json();
               console.log("Fetched Merapi Data:", data.features.length);
-              
-              // Filter/Clip Merapi data to Pondokrejo boundary (using buffered for inclusivity)
-              const filteredFeatures = data.features.map((feature: any) => {
-                 try {
-                   if (feature.geometry.type === 'LineString' || feature.geometry.type === 'MultiLineString') {
-                      if (turf.booleanIntersects(feature, filterPolygon)) {
-                          return feature; 
-                      }
-                   } else if (feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon') {
-                      const intersection = turf.intersect(turf.featureCollection([feature, filterPolygon]));
-                      return intersection;
-                   }
-                 } catch (e) {
-                   console.error("Error processing feature", e);
-                   return null;
-                 }
-                 return null;
-              }).filter(Boolean);
-              
-              console.log("Filtered Merapi Data:", filteredFeatures.length);
-              setMerapiData({ type: "FeatureCollection", features: filteredFeatures });
-            } catch (e) {
-              console.error(e);
-            } finally {
-              setLoading(false);
+              setMerapiData(data);
+            } catch (err) {
+              console.error("Error fetching Merapi data:", err);
             }
           }
 
@@ -131,25 +109,9 @@ export default function MapInner({ showControls = false }: { showControls?: bool
               const res = await fetch(IRIGASI_URL);
               const data = await res.json();
               console.log("Fetched Irigasi Data:", data.features.length);
-              
-              // Filter lines that intersect with polygon
-              const filteredFeatures = data.features.map((feature: any) => {
-                try {
-                   if (turf.booleanIntersects(feature, filterPolygon)) {
-                       return feature; 
-                   }
-                } catch (e) {
-                  return null;
-                }
-                return null;
-             }).filter(Boolean);
-
-              console.log("Filtered Irigasi Data:", filteredFeatures.length);
-              setIrigasiData({ type: "FeatureCollection", features: filteredFeatures });
-            } catch (e) {
-              console.error(e);
-            } finally {
-              setLoading(false);
+              setIrigasiData(data);
+            } catch (err) {
+              console.error("Error fetching Irigasi data:", err);
             }
           }
 
@@ -159,25 +121,9 @@ export default function MapInner({ showControls = false }: { showControls?: bool
               const res = await fetch(WIFI_URL);
               const data = await res.json();
               console.log("Fetched WiFi Data:", data.features.length);
-              
-              // Filter points inside polygon
-              const filteredFeatures = data.features.map((feature: any) => {
-                try {
-                   if (turf.booleanPointInPolygon(feature, filterPolygon)) {
-                       return feature; 
-                   }
-                } catch (e) {
-                  return null;
-                }
-                return null;
-             }).filter(Boolean);
-
-              console.log("Filtered WiFi Data:", filteredFeatures.length);
-              setWifiData({ type: "FeatureCollection", features: filteredFeatures });
-            } catch (e) {
-              console.error(e);
-            } finally {
-              setLoading(false);
+              setWifiData(data);
+            } catch (err) {
+              console.error("Error fetching WiFi data:", err);
             }
           }
 
@@ -187,77 +133,43 @@ export default function MapInner({ showControls = false }: { showControls?: bool
               const res = await fetch(JALAN_URL);
               const data = await res.json();
               console.log("Fetched Jalan Data:", data.features.length);
-              
-              // Filter lines that intersect with polygon
-              const filteredFeatures = data.features.map((feature: any) => {
-                try {
-                   if (turf.booleanIntersects(feature, filterPolygon)) {
-                       return feature; 
-                   }
-                } catch (e) {
-                  return null;
-                }
-                return null;
-             }).filter(Boolean);
-
-              console.log("Filtered Jalan Data:", filteredFeatures.length);
-              setJalanData({ type: "FeatureCollection", features: filteredFeatures });
-            } catch (e) {
-              console.error(e);
-            } finally {
-              setLoading(false);
+              setJalanData(data);
+            } catch (err) {
+              console.error("Error fetching Jalan data:", err);
             }
           }
 
           if (showLimbah && !limbahData) {
-            setLoading(true);
-            try {
-              const res = await fetch(LIMBAH_URL);
-              const data = await res.json();
-              
-              const filteredFeatures = data.features.map((feature: any) => {
-                try {
-                   if (turf.booleanIntersects(feature, filterPolygon)) return feature;
-                } catch (e) { return null; }
-                return null;
-             }).filter(Boolean);
-
-              setLimbahData({ type: "FeatureCollection", features: filteredFeatures });
-            } catch (e) { console.error(e); } finally { setLoading(false); }
+             setLoading(true);
+             try {
+                const res = await fetch(LIMBAH_URL);
+                const data = await res.json();
+                setLimbahData(data);
+             } catch (err) {
+                console.error("Error fetching Limbah data:", err);
+             }
           }
 
           if (showHazard && !hazardData) {
-            setLoading(true);
-            try {
-              const res = await fetch(HAZARD_URL);
-              const data = await res.json();
-              
-              const filteredFeatures = data.features.map((feature: any) => {
-                try {
-                   if (turf.booleanIntersects(feature, filterPolygon)) return feature;
-                } catch (e) { return null; }
-                return null;
-             }).filter(Boolean);
-
-              setHazardData({ type: "FeatureCollection", features: filteredFeatures });
-            } catch (e) { console.error(e); } finally { setLoading(false); }
+             setLoading(true);
+             try {
+                const res = await fetch(HAZARD_URL);
+                const data = await res.json();
+                setHazardData(data);
+             } catch (err) {
+                console.error("Error fetching Hazard data:", err);
+             }
           }
 
           if (showRadiusLB3 && !radiusLB3Data) {
-            setLoading(true);
-            try {
-              const res = await fetch(RADIUS_LB3_URL);
-              const data = await res.json();
-              
-              const filteredFeatures = data.features.map((feature: any) => {
-                try {
-                   if (turf.booleanIntersects(feature, filterPolygon)) return feature;
-                } catch (e) { return null; }
-                return null;
-             }).filter(Boolean);
-
-              setRadiusLB3Data({ type: "FeatureCollection", features: filteredFeatures });
-            } catch (e) { console.error(e); } finally { setLoading(false); }
+             setLoading(true);
+             try {
+                const res = await fetch(RADIUS_LB3_URL);
+                const data = await res.json();
+                setRadiusLB3Data(data);
+             } catch (err) {
+                console.error("Error fetching Radius LB3 data:", err);
+             }
           }
 
         } catch (error) {
