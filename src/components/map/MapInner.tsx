@@ -94,9 +94,11 @@ export default function MapInner({ showControls = false }: { showControls?: bool
           if (showMerapi && !merapiData) {
             setLoading(true);
             try {
-              const res = await fetch(MERAPI_RADIUS_URL);
+              // Use our internal proxy API to bypass CORS
+              const res = await fetch(`/api/peta?url=${encodeURIComponent(MERAPI_RADIUS_URL)}`);
+              if (!res.ok) throw new Error('Network response was not ok');
               const data = await res.json();
-              console.log("Fetched Merapi Data:", data.features.length);
+              console.log("Fetched Merapi Data:", data?.features?.length || 0);
               setMerapiData(data);
             } catch (err) {
               console.error("Error fetching Merapi data:", err);
@@ -106,9 +108,10 @@ export default function MapInner({ showControls = false }: { showControls?: bool
           if (showIrigasi && !irigasiData) {
             setLoading(true);
             try {
-              const res = await fetch(IRIGASI_URL);
+              const res = await fetch(`/api/peta?url=${encodeURIComponent(IRIGASI_URL)}`);
+              if (!res.ok) throw new Error('Network response was not ok');
               const data = await res.json();
-              console.log("Fetched Irigasi Data:", data.features.length);
+              console.log("Fetched Irigasi Data:", data?.features?.length || 0);
               setIrigasiData(data);
             } catch (err) {
               console.error("Error fetching Irigasi data:", err);
@@ -118,9 +121,10 @@ export default function MapInner({ showControls = false }: { showControls?: bool
           if (showWifi && !wifiData) {
             setLoading(true);
             try {
-              const res = await fetch(WIFI_URL);
+              const res = await fetch(`/api/peta?url=${encodeURIComponent(WIFI_URL)}`);
+              if (!res.ok) throw new Error('Network response was not ok');
               const data = await res.json();
-              console.log("Fetched WiFi Data:", data.features.length);
+              console.log("Fetched WiFi Data:", data?.features?.length || 0);
               setWifiData(data);
             } catch (err) {
               console.error("Error fetching WiFi data:", err);
@@ -130,9 +134,10 @@ export default function MapInner({ showControls = false }: { showControls?: bool
           if (showJalan && !jalanData) {
             setLoading(true);
             try {
-              const res = await fetch(JALAN_URL);
+              const res = await fetch(`/api/peta?url=${encodeURIComponent(JALAN_URL)}`);
+              if (!res.ok) throw new Error('Network response was not ok');
               const data = await res.json();
-              console.log("Fetched Jalan Data:", data.features.length);
+              console.log("Fetched Jalan Data:", data?.features?.length || 0);
               setJalanData(data);
             } catch (err) {
               console.error("Error fetching Jalan data:", err);
@@ -142,7 +147,8 @@ export default function MapInner({ showControls = false }: { showControls?: bool
           if (showLimbah && !limbahData) {
              setLoading(true);
              try {
-                const res = await fetch(LIMBAH_URL);
+                const res = await fetch(`/api/peta?url=${encodeURIComponent(LIMBAH_URL)}`);
+                if (!res.ok) throw new Error('Network response was not ok');
                 const data = await res.json();
                 setLimbahData(data);
              } catch (err) {
@@ -153,7 +159,8 @@ export default function MapInner({ showControls = false }: { showControls?: bool
           if (showHazard && !hazardData) {
              setLoading(true);
              try {
-                const res = await fetch(HAZARD_URL);
+                const res = await fetch(`/api/peta?url=${encodeURIComponent(HAZARD_URL)}`);
+                if (!res.ok) throw new Error('Network response was not ok');
                 const data = await res.json();
                 setHazardData(data);
              } catch (err) {
@@ -164,7 +171,8 @@ export default function MapInner({ showControls = false }: { showControls?: bool
           if (showRadiusLB3 && !radiusLB3Data) {
              setLoading(true);
              try {
-                const res = await fetch(RADIUS_LB3_URL);
+                const res = await fetch(`/api/peta?url=${encodeURIComponent(RADIUS_LB3_URL)}`);
+                if (!res.ok) throw new Error('Network response was not ok');
                 const data = await res.json();
                 setRadiusLB3Data(data);
              } catch (err) {
