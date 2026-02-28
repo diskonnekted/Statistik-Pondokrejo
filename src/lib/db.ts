@@ -1,24 +1,25 @@
-import mysql from 'mysql2/promise';
+import { sql } from '@vercel/postgres';
 
-// Create the connection pool. The pool-specific settings are the defaults
-const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  waitForConnections: true,
-  connectionLimit: 10,
-  maxIdle: 10, // max idle connections, the default value is the same as `connectionLimit`
-  idleTimeout: 60000, // idle connections timeout, in milliseconds, the default value 60000
-  queueLimit: 0,
-  enableKeepAlive: true,
-  keepAliveInitialDelay: 0,
-});
-
-export async function query(sql: string, params?: any[]) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [results] = await pool.execute(sql, params || []);
-  return results;
+export async function query(queryString: string, params?: any[]) {
+  try {
+    // Convert MySQL ? placeholders to Postgres $1, $2, etc.
+    let paramIndex = 1;
+    const pgQuery = queryString.replace(/\?/g, () => `$${paramIndex++}`);
+    
+    // Execute query using Vercel Postgres
+    // Vercel Postgres returns { rows: [], fields: [] }
+    const result = await sql.query(pgQuery, params);
+    return result.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw error;
+  }
 }
 
-export default pool;
+// Mock pool for backward compatibility if needed, but better to remove usage
+export default {
+  execute: async (q: string, p?: any[]) => {
+    const rows = await query(q, p);
+    return [rows, []]; // Mimic mysql2 [rows, fields] return signature
+  }
+};
